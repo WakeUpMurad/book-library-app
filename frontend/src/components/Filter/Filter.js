@@ -20,7 +20,7 @@ const Filter = () => {
     dispatch(setOnlyFavoriteFilter())
   }
 
-  const handlleResetFilters = () => {
+  const handleResetFilters = () => {
     dispatch(resetFilters())
   }
   return (
@@ -54,7 +54,7 @@ const Filter = () => {
         </div>
         <button
           type="button"
-          onClick={handlleResetFilters}
+          onClick={handleResetFilters}
         >
           Reset Filters
         </button>

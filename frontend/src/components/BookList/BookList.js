@@ -1,11 +1,11 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { BsBookmarkStarFill, BsBookmarkStar } from 'react-icons/bs'
-import { deleteBook, toogleFavoriteBook } from '../../redux/books/actionCreators'
+import { selectBooks, deleteBook, toogleFavorite } from '../../redux/slices/booksSlice'
 import { selectTitleFilter, selectAuthorFilter, selectOnlyFavoriteFilter } from '../../redux/slices/filterSlice'
 import './BookList.css'
 
 const BookList = () => {
-  const books = useSelector((state) => state.books)
+  const books = useSelector(selectBooks)
   const titleFilter = useSelector(selectTitleFilter)
   const authorFilter = useSelector(selectAuthorFilter)
   const onlyFavoriteFilter = useSelector(selectOnlyFavoriteFilter)
@@ -16,7 +16,7 @@ const BookList = () => {
   }
 
   const handleToogleFavoriteBook = (id) => {
-    dispatch(toogleFavoriteBook(id))
+    dispatch(toogleFavorite(id))
   }
 
   const filteredBooks = books.filter((book) => {
