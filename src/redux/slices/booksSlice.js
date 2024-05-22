@@ -36,14 +36,6 @@ const booksSlice = createSlice({
       })
     },
   },
-  // extraReducers: {
-  //     [fetchBooks.pending]: () => {},
-  //     [fetchBooks.fulfilled]: (state, action) => {
-  //       if (action.payload.title && action.payload.author) {
-  //         state.books.push(createBookWithID(action.payload, 'API'))
-  //       }
-  //     },
-  //   },
   extraReducers: (builder) => {
     builder.addCase(fetchBooks.pending, (state) => {
       state.isLoadingViaAPI = true
